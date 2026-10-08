@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@sudoku/contracts": ["libs/shared/contracts/src/index.ts"],
+      "@sudoku/frontend-application": [
+        "libs/frontend/application/src/index.ts"
+      ],
+      "@sudoku/frontend-http-adapter": [
+        "libs/frontend/http-adapter/src/index.ts"
+      ]
+    }
+  }
+}

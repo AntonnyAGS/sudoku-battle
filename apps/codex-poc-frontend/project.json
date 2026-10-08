@@ -1,0 +1,39 @@
+{
+  "name": "codex-poc-frontend",
+  "projectType": "application",
+  "sourceRoot": "apps/codex-poc-frontend/src",
+  "tags": ["scope:frontend", "layer:composition"],
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{projectRoot}/.next"],
+      "options": {
+        "command": "next build apps/codex-poc-frontend --webpack"
+      }
+    },
+    "start": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "next start apps/codex-poc-frontend --port 3000"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc --noEmit -p apps/codex-poc-frontend/tsconfig.json"
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "eslint apps/codex-poc-frontend"
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "next dev apps/codex-poc-frontend --port 3000"
+      }
+    }
+  }
+}
