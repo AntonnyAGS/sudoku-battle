@@ -29,7 +29,8 @@ at startup. Keep local environment files and credentials out of Git.
 
 ## Commands
 
-Run commands from the workspace root.
+Run commands from the workspace root. Development streams both applications'
+logs and uses Nx's Node command runner so Ctrl+C stops both servers.
 
 | Command                      | Purpose                                                                |
 | ---------------------------- | ---------------------------------------------------------------------- |

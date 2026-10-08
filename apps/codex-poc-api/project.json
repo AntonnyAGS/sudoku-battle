@@ -21,7 +21,8 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "TS_NODE_PROJECT=apps/codex-poc-api/tsconfig.app.json node --env-file-if-exists=apps/codex-poc-api/.env --watch --require ts-node/register --require tsconfig-paths/register apps/codex-poc-api/src/main.ts"
-      }
+      },
+      "continuous": true
     },
     "start": {
       "executor": "nx:run-commands",

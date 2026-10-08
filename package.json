@@ -9,7 +9,7 @@
   },
   "scripts": {
     "prepare": "husky",
-    "dev": "nx run-many -t serve -p codex-poc-api,codex-poc-frontend --parallel=2",
+    "dev": "NX_NATIVE_COMMAND_RUNNER=false nx run-many -t serve -p codex-poc-api,codex-poc-frontend --parallel=2 --output-style=stream",
     "lint": "nx run-many -t lint && tsx tools/verify-boundaries.ts",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

@@ -28,5 +28,6 @@
       "cache": true,
       "inputs": ["default", "^default", "{workspaceRoot}/eslint.config.mjs"]
     }
-  }
+  },
+  "analytics": false
 }

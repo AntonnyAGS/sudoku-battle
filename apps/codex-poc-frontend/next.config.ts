@@ -8,5 +8,6 @@ const { readEnvironment } = createRequire(__filename)(
 
 readEnvironment(process.env);
 
-const config: NextConfig = { poweredByHeader: false };
+// Repository guidelines are maintained in the root AGENTS.md.
+const config: NextConfig = { poweredByHeader: false, agentRules: false };
 export default config;
