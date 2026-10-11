@@ -1,0 +1,27 @@
+{
+  "name": "infrastructure",
+  "projectType": "application",
+  "sourceRoot": "infra/src",
+  "tags": ["scope:infrastructure", "layer:composition"],
+  "targets": {
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc -p infra/tsconfig.json --noEmit"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/infra"],
+      "options": {
+        "command": "tsc -p infra/tsconfig.json"
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "eslint infra"
+      }
+    }
+  }
+}

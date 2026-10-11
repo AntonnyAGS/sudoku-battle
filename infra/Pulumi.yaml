@@ -1,0 +1,7 @@
+name: sudoku-battle
+description: Provider-neutral Sudoku Battle infrastructure foundation
+runtime:
+  name: nodejs
+  options:
+    packagemanager: pnpm
+main: src/index.ts

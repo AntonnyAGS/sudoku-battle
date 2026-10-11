@@ -1,0 +1,41 @@
+{
+  "name": "codex-poc-api",
+  "projectType": "application",
+  "sourceRoot": "apps/codex-poc-api/src",
+  "tags": ["scope:backend", "layer:composition"],
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/api"],
+      "options": {
+        "command": "tsc -p apps/codex-poc-api/tsconfig.app.json && tsc-alias -p apps/codex-poc-api/tsconfig.app.json"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc -p apps/codex-poc-api/tsconfig.json --noEmit"
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "TS_NODE_PROJECT=apps/codex-poc-api/tsconfig.app.json node --env-file-if-exists=apps/codex-poc-api/.env --watch --require ts-node/register --require tsconfig-paths/register apps/codex-poc-api/src/main.ts"
+      },
+      "continuous": true
+    },
+    "start": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "node --env-file-if-exists=apps/codex-poc-api/.env dist/api/apps/codex-poc-api/src/main.js"
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "eslint apps/codex-poc-api"
+      }
+    }
+  }
+}

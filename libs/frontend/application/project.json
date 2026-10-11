@@ -1,0 +1,20 @@
+{
+  "name": "frontend-application",
+  "projectType": "library",
+  "sourceRoot": "libs/frontend/application/src",
+  "tags": ["scope:frontend", "layer:application"],
+  "targets": {
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "eslint libs/frontend/application"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc --noEmit -p libs/frontend/application/tsconfig.json"
+      }
+    }
+  }
+}

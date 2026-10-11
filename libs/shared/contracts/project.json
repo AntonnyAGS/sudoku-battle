@@ -1,0 +1,20 @@
+{
+  "name": "shared-contracts",
+  "sourceRoot": "libs/shared/contracts/src",
+  "projectType": "library",
+  "tags": ["scope:shared", "layer:contract"],
+  "targets": {
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc -p libs/shared/contracts/tsconfig.json --noEmit"
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "eslint libs/shared/contracts"
+      }
+    }
+  }
+}

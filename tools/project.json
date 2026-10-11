@@ -1,0 +1,19 @@
+{
+  "name": "workspace-tooling",
+  "projectType": "library",
+  "tags": ["scope:tooling", "layer:tooling"],
+  "targets": {
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "eslint tools tests playwright.config.ts eslint.config.mjs jest*.config.cjs commitlint.config.cjs"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc -p tools/tsconfig.json --noEmit"
+      }
+    }
+  }
+}
